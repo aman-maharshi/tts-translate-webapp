@@ -22,25 +22,22 @@
 
     <textarea
       class="w-full h-32 p-3 border border-stone-500 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none bg-[#373737] placeholder:text-stone-300"
-      placeholder="Type your text here...">
-    </textarea>
+      placeholder="Type your text here..."></textarea>
 
-    <div class="mt-4">
+    <!-- <div class="mt-4">
       <label for="languageSelect" class="block text-sm font-medium mb-2">
         Select Language
       </label>
       <select id="languageSelect"
         class="w-full p-3 border border-stone-500 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer bg-[#373737]">
       </select>
-    </div>
+    </div> -->
 
     <div class="mt-4">
       <label for="voiceSelect" class="block text-sm font-medium mb-2">Select Voice</label>
       <select id="voiceSelect"
         class="w-full p-3 border border-stone-500 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer bg-[#373737]">
         <option value="default">Default Voice</option>
-        <option value="voice1">Voice 1</option>
-        <option value="voice2">Voice 2</option>
       </select>
     </div>
 
@@ -50,6 +47,8 @@
       <img src="speakerIcon.svg" class="h-5 w-5" alt="speaker">
       Play Text
     </button>
+
+    <p id="error" class="text-red-400 h-4 mt-2 text-sm"></p>
   </div>
 
   <script src="script.js"></script>
