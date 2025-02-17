@@ -1,4 +1,5 @@
 const voiceSelect = document.querySelector('#voiceSelect')
+const languageSelect = document.querySelector('#languageSelect')
 const playButton = document.querySelector('#playButton')
 const textInput = document.querySelector('textarea')
 const error = document.querySelector('#error')
@@ -44,6 +45,28 @@ const handleVoiceChange = () => {
   // speechSynthesis.speak(utterance)
 }
 
+// LANGUAGE SELECT
+const languages = [
+  { code: 'en', name: 'English' },
+  { code: 'hi', name: 'Hindi' },
+  { code: 'es', name: 'Spanish' },
+  { code: 'fr', name: 'French' },
+  { code: 'de', name: 'German' },
+  { code: 'it', name: 'Italian' },
+  { code: 'ja', name: 'Japanese' },
+]
+
+const populateLanguagesList = () => {
+  if (languageSelect) {
+    languages.forEach(lang => {
+      const option = document.createElement('option')
+      option.textContent = lang.name
+      option.value = lang.code
+      languageSelect.appendChild(option)
+    })
+  }
+}
+
 /*
   EVENT LISTENERS
 -------------------*/
@@ -52,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     speechSynthesis.onvoiceschanged = populateVoiceList
   }
   populateVoiceList()
+  populateLanguagesList()
 })
 
 playButton.addEventListener('click', playText)
